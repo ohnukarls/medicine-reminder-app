@@ -1,0 +1,14 @@
+from pydantic import BaseModel
+class MedicationCreate(BaseModel):
+    medication_name: str
+    dosage: str
+    instructions: str | None = None
+
+class MedicationResponse(BaseModel):
+    id: int
+    medication_name: str
+    dosage: str
+    instructions: str | None = None
+
+    class Config:
+        from_attributes = True

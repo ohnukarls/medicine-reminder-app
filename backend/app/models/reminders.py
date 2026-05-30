@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Boolean
 from app.database import Base
 from datetime import datetime
 
@@ -8,3 +8,9 @@ class Reminder(Base):
     schedule_id = Column(Integer, ForeignKey("schedules.id"), nullable=False)
     sent_at = Column(DateTime, default=datetime.utcnow)
     status = Column(String)
+    frequency = Column(String, default="daily")
+    days_of_week = Column(String)
+    is_active = Column(Boolean, default=True)
+    start_date = Column(DateTime)
+    end_date = Column(DateTime)
+    last_sent_at = Column(DateTime)
