@@ -12,7 +12,7 @@ from app.core.dependencies import get_current_user
 
 router = APIRouter(
     prefix="/reminders",    
-    tags=["reminders"]
+    tags=["Reminders"]
 )
 
 @router.get("/", response_model=list[ReminderResponse])

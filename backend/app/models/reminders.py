@@ -8,6 +8,7 @@ class Reminder(Base):
     schedule_id = Column(Integer, ForeignKey("schedules.id"), nullable=False)
     sent_at = Column(DateTime, default=datetime.utcnow)
     status = Column(String)
+    time = Column(DateTime, nullable=False)
     frequency = Column(String, default="daily")
     days_of_week = Column(String)
     is_active = Column(Boolean, default=True)

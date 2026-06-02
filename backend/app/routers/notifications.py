@@ -5,14 +5,13 @@ from app.database import get_db
 from app.models.notifications import Notification
 from app.models.users import User
 from app.schemas.notifications import (
-    NotificationCreate,
     NotificationResponse
 )
 from app.core.dependencies import get_current_user
 
 router = APIRouter(
     prefix="/notifications",        
-    tags=["notifications"]
+    tags=["Notifications"]
 )
 
 @router.get("/", response_model=list[NotificationResponse])

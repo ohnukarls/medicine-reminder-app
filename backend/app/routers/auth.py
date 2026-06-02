@@ -27,7 +27,8 @@ def register(user: UserCreate, db: Session = Depends(get_db)):
 
     new_user = User(
         email=user.email,
-        hashed_password=hash_password(user.password)
+        username=user.username,
+        password_hash=hash_password(user.password)
     )
 
     db.add(new_user)
@@ -52,7 +53,7 @@ def login(user: UserLogin, db: Session = Depends(get_db)):
 
     valid_password = verify_password(
         user.password,
-        db_user.hashed_password
+        db_user.password_hash
     )
 
     if not valid_password:
