@@ -9,4 +9,4 @@ class Adherence_Log(Base):
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     medication_id = Column(Integer, ForeignKey("medications.id"), nullable=False)
     taken_at = Column(DateTime, default=datetime.utcnow)
-    status = Column(String, nullable=False)  # e.g., "taken", "missed", "late"
+    status = Column(String, nullable=False)  # e.g., "taken", "missed", "late" 

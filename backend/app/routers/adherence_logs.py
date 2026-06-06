@@ -15,7 +15,7 @@ router = APIRouter(
     tags=["Adherence_Logs"]
 )   
 
-@router.get("/", response_model=list[AdherenceLogResponse])
+@router.get("/", response_model=list[AdherenceLogResponse]) 
 def read_adherence_logs(db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
     logs = db.query(Adherence_Log).filter(Adherence_Log.user_id == current_user.id).all()
     return logs
