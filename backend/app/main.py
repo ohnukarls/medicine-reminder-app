@@ -3,8 +3,6 @@ from app.database import Base, engine
 from app.models import users, medications, notification_logs, adherence_logs, schedules
 from app.routers import auth, users, medications, notification_logs, adherence_logs, schedules
 
-Base.metadata.create_all(bind=engine)
-
 app = FastAPI()
 
 app.include_router(auth.router)

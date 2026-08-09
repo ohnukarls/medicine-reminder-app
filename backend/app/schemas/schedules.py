@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from datetime import datetime
 
+
 class ScheduleCreate(BaseModel):
     medication_id: int
     recurrence_pattern: str
